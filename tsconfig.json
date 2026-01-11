@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "jsx": "react-jsx",
+    "jsxImportSource": "@lumeland/ssx",
     "module": "commonjs",
     "target": "es2023",
   }

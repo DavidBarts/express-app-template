@@ -1,10 +1,9 @@
-import { ReactNode } from 'react'
-import { renderToPipeableStream } from 'react-dom/server'
-import { renderReact } from "../lib/renderReact"
+import '@lumeland/ssx/jsx-runtime'
+import { renderSSX } from "../lib/renderSSX"
 import { Page, Header, Body } from "../lib/template"
 import { Request, Response } from 'express'
 
-export function get(req: Request, res: Response): void {
+export async function get(req: Request, res: Response): Promise<void> {
     const document = (
         <Page>
           <Header>
@@ -17,5 +16,5 @@ export function get(req: Request, res: Response): void {
         </Page>
     )
 
-    renderReact(res, document)
+    await renderSSX(res, document)
 }
